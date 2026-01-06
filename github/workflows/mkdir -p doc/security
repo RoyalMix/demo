@@ -1,0 +1,57 @@
+# Royal Mix Global — SECURITY HARDENING CHECKLIST (v1.0)
+
+This document tracks critical security tasks required to reach 2000% Production-Ready Architecture.
+
+---
+
+## 1. HTTPS / SSL Enforcement
+- [ ] Enable HSTS (HTTP Strict Transport Security)
+- [ ] Redirect all HTTP → HTTPS on reverse-proxy
+- [ ] Add SSL certificate (Cloudflare Full/strict)
+- [ ] Add secure headers using Helmet
+
+## 2. Database Encryption
+- [ ] Hash passwords using bcrypt (saltRounds=12+)
+- [ ] Encrypt sensitive fields using AES-256-GCM
+- [ ] Mask sensitive data in logs
+- [ ] Add automatic database backup encryption
+
+## 3. Secrets Management
+- [ ] Move all secrets to .env.production
+- [ ] Enable GitHub Actions encrypted secrets
+- [ ] Add .env to .gitignore
+- [ ] Add secret rotation policy (monthly)
+
+## 4. Firewall, WAF, DDoS Protection
+- [ ] Enable Cloudflare WAF rules
+- [ ] Configure DDoS protection
+- [ ] Add bot traffic detection
+- [ ] Add country blocking for known attack zones
+
+## 5. Advanced Rate Limiting
+- [ ] Add per-IP strict rate limit
+- [ ] Add per-route limits with different thresholds
+- [ ] Add Redis-based persistent throttling
+- [ ] Add device fingerprinting + ban list
+
+## 6. Backend Payment Verification (Pi Network)
+- [ ] Verify server-side callback signatures
+- [ ] Reject non-matching payment hashes
+- [ ] Log all failed attempts with IP + device ID
+- [ ] Create transaction audit trail
+
+## 7. Error Handling, Logging, Monitoring
+- [ ] Add Winston logger (security level)
+- [ ] Add request ID tracking (correlation ID)
+- [ ] Add uptime monitoring (UptimeRobot)
+- [ ] Add Sentry for crash/error reporting
+
+---
+
+## Status Summary
+Security Level: **Phase 1 — HARDENING**
+Progress: Initial structure created. Pending implementation steps.
+
+---
+
+Maintained by: RoyalMix Global Security Team
