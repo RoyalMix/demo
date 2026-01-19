@@ -1,0 +1,30 @@
+Path: docs/DOMAIN_VERIFICATION.md
+Content:
+# Royal Mix Global – Domain Verification Guide
+
+## TXT Record Setup
+Host/Name: _pi-domain-verification
+Value: c...dc73f
+TTL: 300 (5 min)
+Add this TXT record to your DNS provider.
+
+## HTTPS Requirement
+Make sure https://royalmixinternational.com has a valid SSL certificate.
+
+## Verification Steps
+1. Go to Pi Developers Dashboard
+2. Enter your domain: royalmixinternational.com
+3. Click Verify Domain
+4. If TXT record is correctly propagated, verification completes within 30–60 seconds
+
+## DNS Propagation Check
+Use https://www.whatsmydns.net/ to check TXT propagation globally.
+
+## Pi SDK Callback Example
+```javascript
+const piSDK = require('pi-sdk');
+
+piSDK.verifyDomain({
+  domain: 'royalmixinternational.com',
+  key: 'cefc3ac44cdbbea470881534ced3b575e61706a7310cd2a60fc242553d9a198c8588944b7df8352ac4806bb89f8584b86c439bd1fcbb1c789e154ce3cb3dc73f'
+});
