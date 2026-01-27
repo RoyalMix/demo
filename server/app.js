@@ -1,4 +1,6 @@
+const aiRoutes = require("./ai-intelligence/aiRoutes");
 const walletRoutes = require("./wallet-sync/walletRoutes");
+app.use("/api/ai", aiRoutes);
 const express = require("express");
 const cors = require("cors");
 
