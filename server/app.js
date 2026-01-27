@@ -1,3 +1,4 @@
+const walletRoutes = require("./wallet-sync/walletRoutes");
 const express = require("express");
 const cors = require("cors");
 
@@ -8,7 +9,7 @@ app.use(express.json());
 // Integration Layer
 const integrationRoutes = require("./integration/integrationRoutes");
 app.use("/api/integration", integrationRoutes);
-
+app.use("/api/wallet", walletRoutes);
 // Health check
 app.get("/", (req, res) => {
   res.send("Royal Mix Integration Layer Running ✅");
