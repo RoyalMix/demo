@@ -8,3 +8,5 @@ const govDashboard = require("./routes/govDashboard");
 const healthRoute = require("./routes/health");
 app.use("/api/gov", govDashboard);
 app.use("/api/health", healthRoute);
+const riskRoutes = require("./ai-risk/riskRoutes");
+app.use("/api/ai-risk", riskRoutes);
