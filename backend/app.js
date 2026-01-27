@@ -1,3 +1,4 @@
+const integrationRoutes = require("./integration-layer/integrationRoutes");
 const verificationRoutes = require("./routes/verification");
 app.use("/api/verify", verificationRoutes);
 const verificationRoutes = require("./routes/verification");
@@ -8,3 +9,4 @@ const govDashboard = require("./routes/govDashboard");
 const healthRoute = require("./routes/health");
 app.use("/api/gov", govDashboard);
 app.use("/api/health", healthRoute);
+app.use("/api/integration", integrationRoutes);
