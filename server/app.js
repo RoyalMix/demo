@@ -1,3 +1,6 @@
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok" });
+});
 const aiRoutes = require("./ai-intelligence/aiRoutes");
 const walletRoutes = require("./wallet-sync/walletRoutes");
 app.use("/api/ai", aiRoutes);
@@ -19,3 +22,5 @@ app.get("/", (req, res) => {
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const riskRoutes = require("./routes/riskRoutes");
+app.use("/api/risk", riskRoutes);
